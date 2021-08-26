@@ -125,6 +125,14 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
           if (listener.onConferenceTerminated != null)
             listener.onConferenceTerminated!(message);
           break;
+        case "onPictureInPictureWillEnter":
+          if (listener.onPictureInPictureWillEnter != null)
+          listener.onPictureInPictureWillEnter!(message);
+          break;
+        case "onPictureInPictureTerminated":
+          if (listener.onPictureInPictureTerminated != null)
+          listener.onPictureInPictureTerminated!(message);
+          break;
       }
     });
   }
@@ -146,6 +154,14 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
         case "onConferenceTerminated":
           if (listener.onConferenceTerminated != null)
             listener.onConferenceTerminated!(message);
+          break;
+        case "onPictureInPictureWillEnter":
+          if (listener.onPictureInPictureWillEnter != null)
+          listener.onPictureInPictureWillEnter!(message);
+          break;
+        case "onPictureInPictureTerminated":
+          if (listener.onPictureInPictureTerminated != null)
+          listener.onPictureInPictureTerminated!(message);
 
           // Remove the listener from the map of _perMeetingListeners on terminate
           _perMeetingListeners.remove(listener);
