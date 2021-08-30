@@ -88,8 +88,10 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
     _listeners.clear();
   }
 
+  @override
   toggleShare() {
-    api?.executeCommand('toggleShareScreen', ['true']);
+    _channel.invokeMethod('toggleShareScreen');
+    // api?.executeCommand('toggleShareScreen', ['true']);
   }
 
   @override
