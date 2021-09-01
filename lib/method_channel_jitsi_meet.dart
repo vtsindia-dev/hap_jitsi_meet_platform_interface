@@ -7,15 +7,12 @@ import 'package:flutter/services.dart';
 
 import 'jitsi_meet_options.dart';
 import 'jitsi_meet_platform_interface.dart';
-import 'jitsi_meet_external_api.dart' as jitsi;
 import 'jitsi_meet_response.dart';
 import 'jitsi_meeting_listener.dart';
 
 const MethodChannel _channel = MethodChannel('jitsi_meet');
 
 const EventChannel _eventChannel = const EventChannel('jitsi_meet_events');
-
-jitsi.JitsiMeetAPI? api;
 
 /// An implementation of [JitsiMeetPlatform] that uses method channels.
 class MethodChannelJitsiMeet extends JitsiMeetPlatform {
@@ -96,7 +93,7 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
 
   @override
   void executeCommand(String command, List<String> args) {
-    api?.executeCommand(command, args);
+    // api?.executeCommand(command, args);
   }
 
   @override
